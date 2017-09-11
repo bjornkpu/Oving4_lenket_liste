@@ -1,0 +1,28 @@
+Oppgave 4.3–5 s. 91:
+Bruk ei sirkulær liste til å løse Josephus problem:
+
+Romerne var i ferd med å fange 40 soldater samt Josephus. Soldatene ville heller begå selvmord enn å overgi seg.
+De besluttet at alle skulle stille seg i en sirkel, og så skulle hver tredje person drepes intill det ikke var flere
+igjen. Josephus ville ikke dø, så han regnet raskt ut hvor han måtte stille seg for å bli den siste til å begå selvmord,
+og dermed slippe å gjøre det.
+
+Lag et program som finner ut hvor Josephus bør stå, avhengig av hvor mange personer som er med,
+og hvor stort intervall man bruker. Eksempel: Hvis 10 personer står i ringen, og hver fjerde drepes, får men følgende
+(! markerer de som drepes):
+1 2 3 4! 5 6 7 8 9 10!
+1 2! 3 5 6 7! 9 10
+1 3! 5 6 9 10!
+1 5 6 9!
+1 5 6
+1! 5 6
+5 6!
+Så da ser vi at person 5 overlever.
+------------------------------------------------------------------------------------------------------------------------
+
+Finn dessuten kompleksiteten for programmet dere lager, som funksjon av antall personer og lengden på
+intervallet mellom dem.
+
+I oppgaven står det «Bruk ei sirkulær liste». Altså ikke andre datastrukturer, som f.eks. tabeller.
+«arrayList» er heller ikke sirkulær.
+
+Et lite tips: hvis listen din har en «slutt», som blir et «spesialtilfelle», har du neppe gjort dette rett.
