@@ -11,29 +11,9 @@ public class SirkulaerListe {
 
 	public Node finnHode(){ return hode;}
 
-	public void settInnFremst(double verdi){
-
-		Node siste = hode;
-		while(siste.neste == hode){
-			siste = siste.neste;
-		}
-		hode = new Node(verdi, null);
-		siste.neste = hode;
-		++antElementer;
-	}
-
 	public void settInnBakerst(double verdi){
-		if(hode != null) {
-			Node denne = hode;
-			while(denne.neste != hode){
-				denne = denne.neste;
-			}
-			denne.neste = new Node(verdi, hode);
-		} else {
-			hode = new Node(verdi, null);
-			hode.setNeste(hode);
-		}
-		++antElementer;
+
+
 	}
 
 	public Node fjern(Node n) {
@@ -48,7 +28,12 @@ public class SirkulaerListe {
 			if (forige != null) {
 				forige.neste = denne.neste;
 			} else {
+				Node siste = hode;
+				while(siste.neste != hode){
+					siste = siste.neste;
+				}
 				hode = denne.neste;
+				siste.neste = hode;
 			}
 			denne.neste = null;
 			--antElementer;
@@ -68,10 +53,5 @@ public class SirkulaerListe {
 		} else {
 			return null;
 		}
-	}
-
-	public void slettAlle() {
-		hode = null;
-		antElementer = 0;
 	}
 }
