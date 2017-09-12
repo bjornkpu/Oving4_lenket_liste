@@ -12,19 +12,26 @@ public class SirkulaerListe {
 	public Node finnHode(){ return hode;}
 
 	public void settInnFremst(double verdi){
-		hode = new Node(verdi, hode);
+
+		Node siste = hode;
+		while(siste.neste == hode){
+			siste = siste.neste;
+		}
+		hode = new Node(verdi, null);
+		siste.neste = hode;
 		++antElementer;
 	}
 
 	public void settInnBakerst(double verdi){
 		if(hode != null) {
 			Node denne = hode;
-			while(denne.neste != null){
+			while(denne.neste != hode){
 				denne = denne.neste;
 			}
-			denne.neste = new Node(verdi, null);
+			denne.neste = new Node(verdi, hode);
 		} else {
 			hode = new Node(verdi, null);
+			hode.setNeste(hode);
 		}
 		++antElementer;
 	}

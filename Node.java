@@ -16,4 +16,8 @@ public class Node {
 	public Node finnNeste(){
 		return neste;
 	}
+
+	public void setNeste(Node n){
+		this.neste = n;
+	}
 }
